@@ -55,9 +55,9 @@
 
 - Nhập dữ liệu cho bảng LopHP:
   ![image](https://github.com/user-attachments/assets/2c74317d-c77a-4137-8ef9-9340ebdca203)
-
+  
 - Nhập dữ liệu cho bảng MonHoc:
-  ![image](https://github.com/user-attachments/assets/70e2e8dd-080e-4603-a160-e6a9a73e3c1b)
+  ![image](https://github.com/user-attachments/assets/d602d315-5cfb-4964-8050-3b55085e77d5)
 
 - Nhập dữ liệu cho bảng PhongHoc:
   ![image](https://github.com/user-attachments/assets/135582cc-2fdf-4ec5-87b6-277b3189d8d8)
