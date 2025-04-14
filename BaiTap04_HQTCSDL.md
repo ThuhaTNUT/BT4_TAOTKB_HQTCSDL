@@ -12,10 +12,10 @@
 - Dữ liệu trong trang này vẫn là dữ liệu thô vì thế phải chuẩn hóa dữ liệu về dạng 3NF
 - Dữ liệu sau khi chuẩn háo về 3NF sẽ gồm các bảng:
   + GiaoVien (#MaGV, TenGV)
-  + LopHP (#MaLHP, @MaGV, @MaMon)
+  + LopHP (#MaLHP, TenLHP)
   + MonHoc (#MaMon, TenMon)
   + PhongHoc (#MaPhong, TenPhong)
-  + TKB (#id_TKB, @MaLHP, @MaPhong, SoTiet, GioVao, GioRa, Thu, Ngay)
+  + TKB (#id_TKB, @MaGV, @MaMon, @MaLHP, @MaPhong, SoTiet, GioVao, GioRa, Thu, Ngay)
 - Các bảng trên đã đạt chuẩn 3NF và không có phụ thuộc hàm dư thừa
 ## - Dưới đây là các bước tạo CSDL TKB của bộ môn Công nghệ thông tin 
 ### - Vào SQL Server 
@@ -35,16 +35,36 @@
 
 #### Các bảng còn lại tạo tương tự như bảng GiaoVien
 - Tạo bảng LopHP:
-  ![image](https://github.com/user-attachments/assets/42cbd471-f058-45c4-b61c-7b7454ea2b29)
+  ![image](https://github.com/user-attachments/assets/f2044cb5-9720-4b39-8582-17ea0e4cd8d5)
 
 - Tạo bảng MonHoc:
-  ![image](https://github.com/user-attachments/assets/723838c5-4fc0-483b-b9cf-b2de266901f4)
+  ![image](https://github.com/user-attachments/assets/ed615bea-fa56-4f7d-9fa6-5c80b0133f23)
 
 - tạo bảng PhongHoc:
-  ![image](https://github.com/user-attachments/assets/4e60e6f4-886a-4526-a756-53f2e982a0f6)
+  ![image](https://github.com/user-attachments/assets/2f8c3f78-9cc3-4848-93c4-c07552f71391)
 
 - Tạo bảng TKB: 
-  ![image](https://github.com/user-attachments/assets/622e3fa8-153d-424b-be91-51d34e631a8c)
+  ![image](https://github.com/user-attachments/assets/9a42e7e4-befa-4d8e-bb60-47788fa7f585)
+
+### Sau khi nhập xong các bảng ta có một diagram như sau: 
+  ![image](https://github.com/user-attachments/assets/7b524c9b-15d9-4e25-9ea9-d6b6f3528002)
 
 ### Nhập dữ liệu cho bảng dựa vào dữ liệu trên tms.tnut.edu.vn
 - Nhập dữ liệu cho bảng giáo viên 
+  ![image](https://github.com/user-attachments/assets/93ee1c6c-8610-413e-99b3-420e53443b64)
+
+- Nhập dữ liệu cho bảng LopHP:
+  ![image](https://github.com/user-attachments/assets/2c74317d-c77a-4137-8ef9-9340ebdca203)
+
+- Nhập dữ liệu cho bảng MonHoc:
+  ![image](https://github.com/user-attachments/assets/70e2e8dd-080e-4603-a160-e6a9a73e3c1b)
+
+- Nhập dữ liệu cho bảng PhongHoc:
+  ![image](https://github.com/user-attachments/assets/135582cc-2fdf-4ec5-87b6-277b3189d8d8)
+
+- Nhập dữ liệu cho bảng TKB:
+
+## 2. Tạo Query truy vấn thông tin gồm 4 cột: tên giáo viên, môn dậy, giờ vào, giờ ra
+
+## 3. Trả lời câu hỏi: trong khoảng thời gian từ datetime1 tới datetime2 thì có những gv nào đang bận giảng dạy.
+
