@@ -47,24 +47,46 @@
   ![image](https://github.com/user-attachments/assets/9a42e7e4-befa-4d8e-bb60-47788fa7f585)
 
 ### Sau khi nhập xong các bảng ta có một diagram như sau: 
-  ![image](https://github.com/user-attachments/assets/7b524c9b-15d9-4e25-9ea9-d6b6f3528002)
+  ![image](https://github.com/user-attachments/assets/f4344f30-5f06-4c71-be91-036dd3fe9001)
 
 ### Nhập dữ liệu cho bảng dựa vào dữ liệu trên tms.tnut.edu.vn
 - Nhập dữ liệu cho bảng giáo viên 
-  ![image](https://github.com/user-attachments/assets/93ee1c6c-8610-413e-99b3-420e53443b64)
+  ![image](https://github.com/user-attachments/assets/c46496cb-b310-4b9e-9ea0-fe8629b6ded7)
 
 - Nhập dữ liệu cho bảng LopHP:
-  ![image](https://github.com/user-attachments/assets/2c74317d-c77a-4137-8ef9-9340ebdca203)
-  
+  ![image](https://github.com/user-attachments/assets/77f9a1f2-2c47-4e21-b4ca-ed3d073034f9)
+
 - Nhập dữ liệu cho bảng MonHoc:
-  ![image](https://github.com/user-attachments/assets/d602d315-5cfb-4964-8050-3b55085e77d5)
+  ![image](https://github.com/user-attachments/assets/4d71d875-f208-424b-83f9-78f32aae923f)
 
 - Nhập dữ liệu cho bảng PhongHoc:
-  ![image](https://github.com/user-attachments/assets/135582cc-2fdf-4ec5-87b6-277b3189d8d8)
+  ![image](https://github.com/user-attachments/assets/669fba38-31ad-46d6-92d0-9f620bd8c02f)
 
 - Nhập dữ liệu cho bảng TKB:
+  ![image](https://github.com/user-attachments/assets/064b8ef2-77be-48a3-8540-6963f1779619)
 
 ## 2. Tạo Query truy vấn thông tin gồm 4 cột: tên giáo viên, môn dậy, giờ vào, giờ ra
+### - Lệnh SQL truy vấn thông tin
+```sql
+  DECLARE @datetime1 DATETIME = '2025-04-28 07:00:00';
+DECLARE @datetime2 DATETIME = '2025-04-28 10:00:00';
 
+SELECT 
+    GV.TenGV AS [Họ Tên Giáo Viên],
+    MH.TenMon AS [Môn Dạy],
+    TKB.GioVao AS [Giờ Vào],
+    TKB.GioRa AS [Giờ Ra]
+FROM 
+    TKB
+JOIN 
+    GiaoVien GV ON TKB.MaGV = GV.MaGV
+JOIN 
+    MonHoc MH ON TKB.MaMon = MH.MaMon
+WHERE 
+    TKB.Ngay = CAST(@datetime1 AS DATE)
+    AND TKB.GioVao < CAST(@datetime2 AS TIME)
+    AND TKB.GioRa > CAST(@datetime1 AS TIME);
+```
 ## 3. Trả lời câu hỏi: trong khoảng thời gian từ datetime1 tới datetime2 thì có những gv nào đang bận giảng dạy.
+  ![image](https://github.com/user-attachments/assets/7c4b1955-e1be-41d4-8496-56b41969bb6c)
 
